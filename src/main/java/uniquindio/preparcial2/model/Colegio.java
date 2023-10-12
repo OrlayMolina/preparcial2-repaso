@@ -36,13 +36,7 @@ public class Colegio {
         return estudianteEncontrado;
     }
 
-    private static void guardarDatos(ArrayList<Estudiante> estudiantes) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("resources\\uniquindio\\preparcial2\\archivos\\estudiantes.txt"))) {
-            for (Estudiante estudiante : estudiantes) {
-                bw.write(estudiante.toString() + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
+
+
 }

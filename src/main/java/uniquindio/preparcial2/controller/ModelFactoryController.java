@@ -4,7 +4,9 @@ import uniquindio.preparcial2.mapping.dto.EstudianteDto;
 import uniquindio.preparcial2.mapping.mappers.ColegioMapper;
 import uniquindio.preparcial2.model.Colegio;
 import uniquindio.preparcial2.model.Estudiante;
+import uniquindio.preparcial2.util.Persistencia;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ModelFactoryController {
@@ -25,7 +27,7 @@ public class ModelFactoryController {
     }
 
     public ModelFactoryController() {
-
+        cargarDatosDesdeArchivos();
     }
 
     public Colegio getColegio() {
@@ -41,12 +43,34 @@ public class ModelFactoryController {
             if(!colegio.verificarEstudianteExistente(estudianteDto.codigo())) {
                 Estudiante estudiante = mapper.estudianteDtoToEstudiante(estudianteDto);
                 getColegio().agregarEstudiante(estudiante);
+                guardarEstudiante();
             }
             return true;
         }catch (Exception e){
             e.getMessage();
             return false;
         }
+    }
+
+    private void cargarDatosDesdeArchivos() {
+        colegio = new Colegio();
+        try {
+            Persistencia.cargarDatosArchivos(colegio);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void guardarEstudiante() {
+        try {
+            Persistencia.guardarEstudiante(getColegio().getListaEstudiantes());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void registrarAcciones(String mensaje, int nivel, String accion) {
+        Persistencia.guardaRegistroLog(mensaje, nivel, accion);
     }
 
 }

@@ -2,6 +2,7 @@ module uniquindio.preparcial2 {
     requires javafx.controls;
     requires javafx.fxml;
     requires org.mapstruct;
+    requires java.logging;
 
 
     opens uniquindio.preparcial2 to javafx.fxml;

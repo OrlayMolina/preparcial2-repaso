@@ -26,9 +26,16 @@ public class Estudiante {
         this.nombre = nombre;
     }
 
+    public String getNotas() {
+        return notas;
+    }
+
+    public void setNotas(String notas) {
+        this.notas = notas;
+    }
+
     @Override
     public String toString() {
-        return codigo + "--" + codigo + "--" + nombre
-                + "--" + notas;
+        return codigo + "--" + nombre + "--" + notas;
     }
 }

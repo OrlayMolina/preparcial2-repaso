@@ -48,7 +48,7 @@ public class EstudiantesViewController {
 
     @FXML
     void agregarEstudiante(ActionEvent event) {
-        crearProducto();
+        crearEstudiante();
     }
 
     @FXML
@@ -99,7 +99,7 @@ public class EstudiantesViewController {
         }
     }
 
-    private void crearProducto() {
+    private void crearEstudiante() {
 
         EstudianteDto estudianteDto = construirEstudianteDto();
 
@@ -108,6 +108,7 @@ public class EstudiantesViewController {
                 listaEstudiantes.add(estudianteDto);
                 mostrarMensaje("Notificación estudiante", "Estudiante creado", "El estudiante se ha creado con éxito", Alert.AlertType.INFORMATION);
                 limpiarCamposEstudiante();
+                registrarAcciones("Estudiante agregado",1, "Agregar estudiante");
 
             }else{
                 mostrarMensaje("Notificación estudiante", "Estudiante no creado", "El estudiante no se ha creado", Alert.AlertType.ERROR);
@@ -116,6 +117,10 @@ public class EstudiantesViewController {
             mostrarMensaje("Notificación estudiante", "Estudiante no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
         }
 
+    }
+
+    private void registrarAcciones(String mensaje, int nivel, String accion) {
+        modelFactoryController.registrarAcciones(mensaje, nivel, accion);
     }
 
     private EstudianteDto construirEstudianteDto() {
