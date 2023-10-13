@@ -14,16 +14,6 @@ public class ArchivoUtil {
 
     static String fechaSistema = "";
 
-    private static void guardarDatos(ArrayList<Estudiante> estudiantes) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Java proyectos\\preparcial2\\src\\main\\resources\\uniquindio\\preparcial2\\archivos\\estudiantes.txt"))) {
-            for (Estudiante estudiante : estudiantes) {
-                bw.write(estudiante.toString() + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static ArrayList<String> leerArchivo(String ruta) throws IOException {
 
         ArrayList<String>  contenido = new ArrayList<String>();

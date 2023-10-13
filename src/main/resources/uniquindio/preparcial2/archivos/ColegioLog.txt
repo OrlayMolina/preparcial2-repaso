@@ -8,3 +8,7 @@ oct. 12, 2023 10:47:15 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarReg
 INFORMACIÓN: Filtro de un estudiante,Estudiante filtrado,2023-10-12
 oct. 12, 2023 11:03:00 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Filtro de un estudiante,Estudiante filtrado,2023-10-12
+oct. 12, 2023 11:28:23 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-12
+oct. 12, 2023 11:28:33 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Filtro de un estudiante,Estudiante filtrado,2023-10-12

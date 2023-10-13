@@ -11,9 +11,8 @@ import java.util.ArrayList;
 
 public class Persistencia {
 
-    public static final String RUTA_ARCHIVO_ESTUDIANTES = "C:\\Java proyectos\\preparcial2\\src\\main\\resources\\uniquindio\\preparcial2\\archivos\\estudiantes.txt";
-
-    public static final String RUTA_ARCHIVO_LOG = "C:\\Java proyectos\\preparcial2\\src\\main\\resources\\uniquindio\\preparcial2\\archivos\\ColegioLog.txt";
+    public static final String RUTA_ARCHIVO_ESTUDIANTES = "src/main/resources/uniquindio/preparcial2/archivos/estudiantes.txt";
+    public static final String RUTA_ARCHIVO_LOG = "src/main/resources/uniquindio/preparcial2/archivos/ColegioLog.txt";
     public static void cargarDatosArchivos(Colegio colegio) throws FileNotFoundException, IOException {
 
         ArrayList<Estudiante> estudiantesCargados = cargarEstudiantes();
@@ -26,7 +25,7 @@ public class Persistencia {
         ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ESTUDIANTES);
         String linea = "";
         for (int i = 0; i < contenido.size(); i++) {
-            linea = contenido.get(i);//juan@@arias@@125454@@Armenia@@uni1@@@12454@@125444
+            linea = contenido.get(i);
             Estudiante estudiante = new Estudiante();
             estudiante.setCodigo(linea.split("--")[0]);
             estudiante.setNombre(linea.split("--")[1]);
@@ -38,7 +37,7 @@ public class Persistencia {
     }
 
     public static void guardarEstudiante(ArrayList<Estudiante> estudiantes) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Java proyectos\\preparcial2\\src\\main\\resources\\uniquindio\\preparcial2\\archivos\\estudiantes.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/uniquindio/preparcial2/archivos/estudiantes.txt"))) {
             for (Estudiante estudiante : estudiantes) {
                 bw.write(estudiante.toString() + "\n");
             }

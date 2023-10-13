@@ -1,8 +1,5 @@
 package uniquindio.preparcial2.model;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Colegio {
@@ -35,8 +32,5 @@ public class Colegio {
         }
         return estudianteEncontrado;
     }
-
-
-
 
 }
