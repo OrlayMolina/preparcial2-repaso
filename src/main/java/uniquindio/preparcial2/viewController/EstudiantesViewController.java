@@ -122,12 +122,14 @@ public class EstudiantesViewController {
                 contadorNotas++;
 
                 if (contadorNotas == 3) {
+                    mostrarMensaje("Notificación estudiante", "Notas agregadas", "Ya ha agregado la cantidad máxima de notas permitidas", Alert.AlertType.INFORMATION);
+                    txfNotas.setDisable(true);
                     contadorNotas = 0;
                     notasAcumuladas = new StringBuilder(); // Crea un nuevo StringBuilder vacío
                 }
             }
         } else {
-            mostrarMensaje("Notificación estudiante", "Nota no agregada", "Ya ha agregado más de 3 notas", Alert.AlertType.ERROR);
+            mostrarMensaje("Notificación estudiante", "Nota no agregada", "Las notas no fueron agregadas", Alert.AlertType.ERROR);
         }
     }
 
@@ -166,6 +168,7 @@ public class EstudiantesViewController {
                 limpiarCamposEstudiante();
                 txfInfo.setVisible(false);
                 txfInfoPermitido.setVisible(false);
+                txfNotas.setDisable(false);
                 registrarAcciones("Estudiante agregado",1, "Agregar estudiante");
 
             }else{
