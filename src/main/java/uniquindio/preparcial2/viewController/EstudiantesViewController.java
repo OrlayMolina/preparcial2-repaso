@@ -150,7 +150,7 @@ public class EstudiantesViewController {
         if(estudianteSeleccionado != null){
             txfCodigo.setText(estudianteSeleccionado.codigo());
             txfNombre.setText(estudianteSeleccionado.nombre());
-            txfNotas.setText(estudianteSeleccionado.notas());
+            txfListaNotas.setText(estudianteSeleccionado.notas());
 
         }
     }
