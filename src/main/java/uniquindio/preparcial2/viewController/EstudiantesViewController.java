@@ -83,10 +83,9 @@ public class EstudiantesViewController {
     private void buscarEstudiantes(String codigo, String nombre, String notas) {
 
         Predicate<EstudianteDto> predicate = EstudianteUtil.buscarPorTodo(codigo, nombre, notas);
-
         ObservableList<EstudianteDto> estudiantesFiltrados = listaEstudiantes.filtered(predicate);
-
         tableEstudiante.setItems(estudiantesFiltrados);
+        registrarAcciones("Estudiante filtrado",1, "Filtro de un estudiante");
     }
 
 
@@ -142,7 +141,6 @@ public class EstudiantesViewController {
         tableEstudiante.getSelectionModel().clearSelection();
         tableEstudiante.setItems(listaEstudiantes);
         listenerSelection();
-        registrarAcciones("Estudiante filtrado",1, "Filtro de un estudiante");
     }
 
     private EstudianteDto construirEstudianteDto() {
