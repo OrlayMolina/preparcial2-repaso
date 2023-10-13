@@ -14,3 +14,27 @@ oct. 12, 2023 11:28:33 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarReg
 INFORMACIÓN: Filtro de un estudiante,Estudiante filtrado,2023-10-12
 oct. 13, 2023 12:10:06 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Filtro de un estudiante,Estudiante filtrado,2023-10-13
+oct. 13, 2023 12:16:47 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Filtro de un estudiante,Estudiante filtrado,2023-10-13
+oct. 13, 2023 1:33:49 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 1:40:26 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 1:44:04 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 1:46:14 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 1:47:46 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 1:55:04 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 1:57:05 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 1:58:01 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 2:33:59 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 2:34:28 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
+oct. 13, 2023 2:36:43 P. M. uniquindio.preparcial2.util.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Agregar estudiante,Estudiante agregado,2023-10-13
