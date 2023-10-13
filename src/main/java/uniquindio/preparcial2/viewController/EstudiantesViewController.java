@@ -8,10 +8,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import uniquindio.preparcial2.controller.ModelFactoryController;
 import uniquindio.preparcial2.mapping.dto.EstudianteDto;
-import uniquindio.preparcial2.model.Colegio;
-import uniquindio.preparcial2.model.Estudiante;
+import uniquindio.preparcial2.util.EstudianteUtil;
 
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class EstudiantesViewController {
 
@@ -52,17 +52,26 @@ public class EstudiantesViewController {
     }
 
     @FXML
-    void eliminarEstudiante(ActionEvent event) {
+    void cancelarEstudiante(ActionEvent event) {
+        cancelarBusqueda();
+    }
 
+    @FXML
+    void buscarEstudiante(ActionEvent event) {
+        String codigo = txfCodigo.getText();
+        String nombre = txfNombre.getText();
+        String notas = txfNotas.getText();
+
+        buscarEstudiantes(codigo, nombre, notas);
     }
 
     @FXML
     void initialize() {
         modelFactoryController = new ModelFactoryController();
-        intiView();
+        initView();
     }
 
-    private void intiView() {
+    private void initView() {
         initDataBinding();
         obtenerEstudiantes();
         tableEstudiante.getItems().clear();
@@ -75,6 +84,16 @@ public class EstudiantesViewController {
         colNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
         colNotas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().notas()));
     }
+
+    private void buscarEstudiantes(String codigo, String nombre, String notas) {
+
+        Predicate<EstudianteDto> predicate = EstudianteUtil.buscarPorTodo(codigo, nombre, notas);
+
+        ObservableList<EstudianteDto> estudiantesFiltrados = listaEstudiantes.filtered(predicate);
+
+        tableEstudiante.setItems(estudiantesFiltrados);
+    }
+
 
     private void obtenerEstudiantes() {
         listaEstudiantes.addAll(modelFactoryController.obtenerEstudiantes());
@@ -121,6 +140,14 @@ public class EstudiantesViewController {
 
     private void registrarAcciones(String mensaje, int nivel, String accion) {
         modelFactoryController.registrarAcciones(mensaje, nivel, accion);
+    }
+
+    private void cancelarBusqueda(){
+        limpiarCamposEstudiante();
+        tableEstudiante.getSelectionModel().clearSelection();
+        tableEstudiante.setItems(listaEstudiantes);
+        listenerSelection();
+        registrarAcciones("Estudiante filtrado",1, "Filtro de un estudiante");
     }
 
     private EstudianteDto construirEstudianteDto() {

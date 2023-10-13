@@ -15,7 +15,7 @@ public class Persistencia {
 
     public static final String RUTA_ARCHIVO_LOG = "C:\\Java proyectos\\preparcial2\\src\\main\\resources\\uniquindio\\preparcial2\\archivos\\ColegioLog.txt";
     public static void cargarDatosArchivos(Colegio colegio) throws FileNotFoundException, IOException {
-        //cargar archivo de producto
+
         ArrayList<Estudiante> estudiantesCargados = cargarEstudiantes();
         if (estudiantesCargados.size() > 0)
             colegio.getListaEstudiantes().addAll(estudiantesCargados);
