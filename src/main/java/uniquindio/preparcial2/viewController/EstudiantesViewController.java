@@ -10,13 +10,16 @@ import uniquindio.preparcial2.controller.ModelFactoryController;
 import uniquindio.preparcial2.mapping.dto.EstudianteDto;
 import uniquindio.preparcial2.util.EstudianteUtil;
 
-import java.util.Optional;
 import java.util.function.Predicate;
 
 public class EstudiantesViewController {
 
     ModelFactoryController modelFactoryController;
     ObservableList<EstudianteDto> listaEstudiantes = FXCollections.observableArrayList();
+    private StringBuilder notasAcumuladas = new StringBuilder();
+    private int contadorNotas = 0;
+
+    ObservableList<String> listaNotas = FXCollections.observableArrayList();
 
     EstudianteDto estudianteSeleccionado;
 
@@ -40,6 +43,21 @@ public class EstudiantesViewController {
 
     @FXML
     private TextField txfNotas;
+
+    @FXML
+    private TextField txfListaNotas;
+
+    @FXML
+    private Label txfInfo;
+
+    @FXML
+    private Label txfInfoPermitido;
+
+    @FXML
+    void agregarNota(ActionEvent event) {
+        agregarListaNotas();
+    }
+
 
     @FXML
     void agregarEstudiante(ActionEvent event) {
@@ -88,6 +106,33 @@ public class EstudiantesViewController {
         registrarAcciones("Estudiante filtrado",1, "Filtro de un estudiante");
     }
 
+    private void agregarListaNotas(){
+
+        txfInfo.setVisible(true);
+        txfInfoPermitido.setVisible(true);
+
+        if (contadorNotas < 3) {
+            String nuevaNota = txfNotas.getText();
+
+            if (!nuevaNota.isEmpty()) {
+
+                notasAcumuladas.append(nuevaNota).append("; ");
+                txfListaNotas.setText(notasAcumuladas.toString());
+                txfNotas.setText("");
+                contadorNotas++;
+
+                if (contadorNotas == 3) {
+                    mostrarMensaje("Notificación estudiante", "Notas agregadas", "Ya ha agregado la cantidad máxima de notas permitidas", Alert.AlertType.INFORMATION);
+                    txfNotas.setDisable(true);
+                    contadorNotas = 0;
+                    notasAcumuladas = new StringBuilder(); // Crea un nuevo StringBuilder vacío
+                }
+            }
+        } else {
+            mostrarMensaje("Notificación estudiante", "Nota no agregada", "Las notas no fueron agregadas", Alert.AlertType.ERROR);
+        }
+    }
+
 
     private void obtenerEstudiantes() {
         listaEstudiantes.addAll(modelFactoryController.obtenerEstudiantes());
@@ -107,7 +152,7 @@ public class EstudiantesViewController {
         if(estudianteSeleccionado != null){
             txfCodigo.setText(estudianteSeleccionado.codigo());
             txfNombre.setText(estudianteSeleccionado.nombre());
-            txfNotas.setText(estudianteSeleccionado.notas());
+            txfListaNotas.setText(estudianteSeleccionado.notas());
 
         }
     }
@@ -121,6 +166,9 @@ public class EstudiantesViewController {
                 listaEstudiantes.add(estudianteDto);
                 mostrarMensaje("Notificación estudiante", "Estudiante creado", "El estudiante se ha creado con éxito", Alert.AlertType.INFORMATION);
                 limpiarCamposEstudiante();
+                txfInfo.setVisible(false);
+                txfInfoPermitido.setVisible(false);
+                txfNotas.setDisable(false);
                 registrarAcciones("Estudiante agregado",1, "Agregar estudiante");
 
             }else{
@@ -147,7 +195,7 @@ public class EstudiantesViewController {
         return new EstudianteDto(
                 txfCodigo.getText(),
                 txfNombre.getText(),
-                txfNotas.getText()
+                txfListaNotas.getText()
 
         );
     }
@@ -156,6 +204,7 @@ public class EstudiantesViewController {
         txfCodigo.setText("");
         txfNombre.setText("");
         txfNotas.setText("");
+        txfListaNotas.setText("");
 
     }
 

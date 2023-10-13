@@ -14,15 +14,15 @@
 
 <AnchorPane prefHeight="387.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uniquindio.preparcial2.viewController.EstudiantesViewController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9eef2" height="50.0" layoutX="14.0" layoutY="109.0" stroke="#cdc0c0" strokeType="INSIDE" width="574.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9eef2" height="87.0" layoutX="14.0" layoutY="16.0" stroke="#cdc0c0" strokeType="INSIDE" width="574.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9eef2" height="44.0" layoutX="14.0" layoutY="139.0" stroke="#cdc0c0" strokeType="INSIDE" width="574.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9eef2" height="119.0" layoutX="14.0" layoutY="16.0" stroke="#cdc0c0" strokeType="INSIDE" width="574.0" />
       <GridPane layoutX="32.0" layoutY="27.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="145.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="155.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="145.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="125.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
@@ -47,10 +47,10 @@
             </Label>
             <TextField fx:id="txfCodigo" prefHeight="37.0" prefWidth="145.0" promptText="Código del estudiante ..." GridPane.rowIndex="2" />
             <TextField fx:id="txfNombre" prefHeight="56.0" prefWidth="155.0" promptText="Nombre del estudiante ..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField fx:id="txfNotas" prefHeight="57.0" prefWidth="145.0" promptText="Notas ..." GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <TextField fx:id="txfNotas" prefHeight="30.0" prefWidth="69.0" promptText="Nota ..." GridPane.columnIndex="4" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <GridPane layoutX="130.0" layoutY="119.0">
+      <GridPane layoutX="130.0" layoutY="146.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
@@ -67,12 +67,20 @@
             <Button mnemonicParsing="false" onAction="#buscarEstudiante" prefHeight="80.0" prefWidth="80.0" text="Buscar" GridPane.columnIndex="4" />
          </children>
       </GridPane>
-      <TableView fx:id="tableEstudiante" layoutX="14.0" layoutY="168.0" prefHeight="200.0" prefWidth="574.0">
+      <TableView fx:id="tableEstudiante" layoutX="14.0" layoutY="189.0" prefHeight="179.0" prefWidth="574.0">
         <columns>
           <TableColumn fx:id="colCodigo" prefWidth="154.0" text="Código del estudiante" />
           <TableColumn fx:id="colNombre" prefWidth="268.0" text="Nombre del estudiante" />
             <TableColumn fx:id="colNotas" prefWidth="151.0" text="Notas" />
         </columns>
       </TableView>
+      <Button layoutX="547.0" layoutY="57.0" mnemonicParsing="false" onAction="#agregarNota" prefHeight="30.0" prefWidth="30.0" text="+" />
+      <TextField fx:id="txfListaNotas" editable="false" layoutX="422.0" layoutY="98.0" prefHeight="30.0" prefWidth="155.0" />
+      <Label fx:id="txfInfo" layoutX="32.0" layoutY="96.0" text="Agregue una a una la nota del estudiante con el signo &quot;+&quot;" textFill="#434242">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="txfInfoPermitido" layoutX="31.0" layoutY="113.0" text="máximo tres (3) notas." textFill="#575555" />
    </children>
 </AnchorPane>
